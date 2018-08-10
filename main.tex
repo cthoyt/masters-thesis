@@ -1,0 +1,388 @@
+%template Master Thesis 
+%University of Bonn Master of Life Science Informatics
+% arara: pdflatex: { synctex: on }
+
+\documentclass[twoside, 12pt,  footinclude=true,  headinclude=true,  cleardoublepage=empty]{scrbook}
+
+\usepackage[utf8]{inputenc}
+\usepackage [english] {babel} 
+
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{lipsum}
+\usepackage[linedheaders,parts,pdfspacing]{classicthesis}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage [T1]{fontenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage[toc,page]{appendix}
+\usepackage{MnSymbol}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mathtools} 
+\usepackage{enumerate}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{acro}
+\usepackage[a4paper,includeall,bindingoffset=20mm,margin=2cm,marginparsep=0cm,marginparwidth=0cm]{geometry}
+\usepackage[font={footnotesize,it}, labelfont=bf]{caption}
+
+\DeclareAcronym{AD}{
+	short = AD ,
+	long  = Alzheimer's disease
+}
+\DeclareAcronym{API}{
+	short = API ,
+	long  = Application Programming Interface
+}
+\DeclareAcronym{BioPAX}{
+	short = BioPAX,
+	long  = Biological Pathway Exchange Language
+}
+\DeclareAcronym{BEL}{
+	short = BEL,
+	long  = Biological Expression Language
+}
+\DeclareAcronym{BELIEF}{
+	short = BELIEF,
+	long  = Biological Expression Language Information Extraction Workflow
+}
+\DeclareAcronym{BRENDA}{
+	short = BRENDA,
+	long  = Braunschweig Enzyme Database
+}
+\DeclareAcronym{ChEBI}{
+	short = ChEBI,
+	long  = Chemical Entities of Biological Interest
+}
+\DeclareAcronym{CI}{
+	short = CI,
+	long  = Continuous Integration
+}
+\DeclareAcronym{CSV}{
+	short = CSV,
+	long  = Comma Separated Values
+}
+\DeclareAcronym{DL}{
+	short = DL,
+	long  = Descriptive Logic
+}
+\DeclareAcronym{eQTL}{
+	short = eQTL,
+	long  = Expression Quantitative Trait Loci
+}
+\DeclareAcronym{eSNPO}{
+	short = eSNPO,
+	long  = eQTL Single Nucleotide Polymorphism Ontology
+}
+\DeclareAcronym{FCS}{
+	short = FCS,
+	long  = Functional Class Scoring
+}
+\DeclareAcronym{GML}{
+	short = GML,
+	long  = Graph Markup Language
+}
+\DeclareAcronym{GO}{
+	short = GO,
+	long  = Gene Ontology
+}
+\DeclareAcronym{GraphQL}{
+	short = GraphQL,
+	long  = Graph Query Language
+}
+\DeclareAcronym{GRP}{
+	short = GRP,
+	long  = Gene Set File Format
+}
+\DeclareAcronym{GSEA}{
+	short = GSEA,
+	long  = Gene Set Enrichment Analysis
+}
+\DeclareAcronym{HGNC}{
+	short = HGNC,
+	long  = HUGO Gene Nomenclature Committee
+}
+\DeclareAcronym{HTML}{
+	short = HTML,
+	long  = HyperText Markup Language
+}
+\DeclareAcronym{HUGO}{
+	short = HUGO,
+	long  = Human Genome Organization
+}
+\DeclareAcronym{IMI}{
+	short = IMI,
+	long  = International Medicine Initiative
+}
+\DeclareAcronym{INDRA}{
+	short = INDRA,
+	long  = Integrated Dynamical Reasoner and Assembler
+}
+\DeclareAcronym{IRI}{
+	short = IRI,
+	long  = Internationalized Resource Identifier
+}
+\DeclareAcronym{JGIF}{
+	short = JFIG,
+	long  = JSON Graph Interchange Format
+}
+\DeclareAcronym{JSON}{
+	short = JSON,
+	long  = JavaScript Object Notation
+}
+\DeclareAcronym{JSONLD}{
+	short = JSON-LD,
+	long  = JSON Linked Data
+}
+\DeclareAcronym{KEGG}{
+	short = KEGG,
+	long  = Kyoto Encyclopedia of Genes and Genomes
+}
+\DeclareAcronym{MeSH}{
+	short = MeSH,
+	long  = Medical Subject Headings
+}
+\DeclareAcronym{NDEx}{
+	short = NDEx,
+	long  = Network Data Exchange
+}
+\DeclareAcronym{NeuroMMSig}{
+	short = NeuroMMSig,
+	long  = Multimodal Mechanistic Signatures for Neurodegenerative Diseases
+}
+\DeclareAcronym{NPA}{
+	short = NPA,
+	long  = Network Perturbation Amplitude
+}
+\DeclareAcronym{OBO}{
+	short = OBO,
+	long  = Open Biomedical Ontology
+}
+\DeclareAcronym{OLS}{
+	short = OLS,
+	long  = Ontology Lookup Service
+}
+\DeclareAcronym{ORA}{
+	short = ORA,
+	long  = Over Representation Analysis
+}
+\DeclareAcronym{OWL}{
+	short = OWL,
+	long  = Web Ontology Language
+}
+\DeclareAcronym{PD}{
+	short = PD,
+	long  = Parkinson's disease
+}
+\DeclareAcronym{PT}{
+	short = PT,
+	long  = Pathway Topology
+}
+\DeclareAcronym{PTSD}{
+	short = PTSD,
+	long  = Post-traumatic Stress Disorder
+}
+\DeclareAcronym{miRNA}{
+	short = miRNA,
+	long  = Micro-Ribonucleic Acid
+}
+\DeclareAcronym{mRNA}{
+	short = mRNA,
+	long  = Messenger Ribonucleic Acid
+}
+\DeclareAcronym{RCR}{
+	short = RCR,
+	long  = Reverse Causal Reasoning
+}
+\DeclareAcronym{RDF}{
+	short = RDF,
+	long  = Resource Description Format
+}
+\DeclareAcronym{RDFS}{
+	short = RDFS,
+	long  = Resource Description Format Schema
+}
+\DeclareAcronym{REST}{
+	short = REST,
+	long  = Representational State Transfer
+}
+\DeclareAcronym{RNA}{
+	short = RNA,
+	long  = Ribonucleic acid
+}
+\DeclareAcronym{SBML}{
+	short = SBML,
+	long  = Systems Biology Markup Language
+}
+\DeclareAcronym{SIF}{
+	short = SIF,
+	long  = Simple Interaction Format
+}
+\DeclareAcronym{SPARQL}{
+	short = SPARQL,
+	long  = SPARQL Protocol and RDF Query Language
+}
+\DeclareAcronym{SQL}{
+	short = SQL,
+	long  = Structured Query Language
+}
+\DeclareAcronym{SNP}{
+	short = SNP,
+	long  = Single-Nucleotide Polymorphism
+}
+\DeclareAcronym{SST}{
+	short = SST,
+	long  = Sampling of Spanning Trees
+}
+\DeclareAcronym{TBI}{
+	short = TBI,
+	long  = Traumatic Brain Injury
+}
+\DeclareAcronym{UBERON}{
+	short = UBERON,
+	long  = Uber Anatomy Ontology
+}
+\DeclareAcronym{UniProt}{
+	short = UniProt,
+	long  = Universal Protein Resource
+}
+\DeclareAcronym{XML}{
+	short = XML,
+	long  = eXtensible Markup Language
+}
+\DeclareAcronym{XMLS}{
+	short = XMLS,
+	long  = eXtensible Markup Language Schema
+}
+\DeclareAcronym{XGMML}{
+	short = XGMML,
+	long  = eXtensible Graph Markup and Modeling Language
+}
+
+\title{Master Thesis}
+\author{Charles Tapley Hoyt}
+\date{\today}
+\begin{document}
+	\begin{titlepage}
+		\centering
+		Bonn-Aachen International Center for Information Technology (B-IT)
+		
+		University of Bonn
+		
+		 Master Programme in Life Science Informatics
+		
+		\vspace{1in}
+		 {\Large \bfseries Master's Thesis}
+		\vspace{1in}
+		
+		{\LARGE \bfseries PyBEL: a Computational Framework for Biological Expression Language}
+		\vspace{1in}
+		
+		{\large Submitted by}
+		
+		{\LARGE Charles Tapley Hoyt\par}
+		
+		\vspace{1in}
+		
+			First Supervisor: Prof. Dr. Martin Hofmann-Apitius
+			\par
+			Second Supervisor: Prof. Dr. Thomas Schultz
+			\par
+			Internal Supervisor: Christian Ebeling
+			
+		\vfill
+		In collaboration with the Fraunhofer Institute for Algorithms and Scientific Computing (SCAI)
+		\begin{flushleft}
+			\today
+		\end{flushleft}
+		
+	\end{titlepage}
+	
+%	% Add blank page
+%	\newpage
+%	\thispagestyle{empty}
+%	\mbox{}
+	
+	% /frontmatter -> Turn on roman numbering for the following content and turns off normal numbering
+	
+	\frontmatter
+
+\chapter*{Acknowledgment}
+
+\begingroup
+\setlength{\parskip}{1em}
+		
+I would like to thank Prof. Dr. Martin Hofmann-Apitius for his encouragement and the precious gift of freedom in my work.
+        
+I would like to thank Christian Ebeling for his valuable supervision, critique, and wisdom in not only my work, but my ongoing development as a scientist and as a person.
+
+I would like to thank Andrej Konotopez for his contributions to PyBEL and his valuable ideas.
+
+I would like to thank Daniel Domingo-Fernández, on whose work, NeuroMMSig, much of this thesis is built.
+
+I would like to thank Reagon Kharki for providing the data for the analysis presented in the final section of this thesis.
+
+I would also like to thank colleagues at Fraunhofer SCAI for their ongoing interest in my work.
+
+Finally, I would like to thank Scott Colby for always being my scientific confidant and consult.
+
+\endgroup	
+
+\tableofcontents
+
+\listoffigures
+\listoftables
+
+\chapter*{Abstract}
+The quantity of data, information, and knowledge in the biomedical domain is increasing at an unprecedented rate — with no signs of deceleration. Even with the assistance of information retrieval technologies, it is overwhelming, if not impossible, for individuals or groups of researchers to be knowledgeable of the state-of-the-art in any but an incredibly specific topic. Besides their obvious increases in volume and velocity, data are also increasing in variety as multi-modal and multi-scale experiments grow more important in the investigation of complex diseases. As experiments' complexities grow, so does the intellectual and temporal burden of analysis and interpretation. 
+
+The ability to reason over the wealth of knowledge from both structured and unstructured sources to generate and prioritize hypotheses in order to automatically interpret new data sets would provide a huge relief to this burden. 
+
+Developing systematic and reproducible methods first requires the formalization and assembly of knowledge in a computable form. As an aside, many techniques and methodologies in bioinformatics are biased towards the study of cancer biology and focus on data and knowledge at the molecular level. In this modeling strategy, often called the bottom-up approach, network and mathematical models are validated against the literature and experiments. 
+
+As we foray into the assembly of knowledge pertaining to new disease areas and associated clinical indications, we find much more focus on the process level and phenotypic level. Because the links between genetics, molecular mechanisms, phenotypes, and clinical measurements are much less clear, they also require the top-down approach to modeling, which first focuses on the larger scales.  While most modeling languages and data formats for assembling knowledge are insufficient, the \ac{BEL} possesses the unique faculty to capture this multi-scale knowledge. It has the potential to serve as a semantic integration platform on which the data measured across scales can be integrated and analyzed. 
+
+The purpose of this work is to outline the first steps taken towards the building of an automatic interpretation and hypothesis generation machine. The contents of this thesis describe the framework built to parse and manipulate the knowledge assemblies encoded in \ac{BEL}, which enables \ac{BEL} to act as a semantic integration layer for heterogeneous data and knowledge sources, the development of a framework for automatic integration of relevant knowledge from structured sources, and the development of schema-free analytical techniques to generate data-driven hypothesis.
+
+% /frontmatter -> Turn on normal numbering 
+\mainmatter
+
+\include{intro}
+
+\include{motivation_goal}
+
+\include{pybel_core}
+
+\include{bio2bel}
+
+\include{pybel_tools}
+
+\include{conclusion}
+
+\printbibliography
+	
+\backmatter
+
+\chapter*{Declaration}
+I hereby certify that this material is my own work, that I used only those sources and resources referred to in the thesis, and that I have identified citations as such.
+		
+\vspace{0.3in}
+
+\noindent Bonn, \today
+
+\vspace{1in}
+
+\noindent Charles Tapley Hoyt
+
+\end{document}
